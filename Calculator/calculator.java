@@ -1,9 +1,19 @@
-import java.util.*;
+import java.util.Scanner;
 
+class Scan
+{
+    static int choose()
+    {
+        Scanner input = new Scanner(System.in);
+
+        int num = input.nextInt();
+        
+        return num;
+    }
+}
 public class calculator {
     public static void main(String[] args) { 
 
-        Scanner in = new Scanner(System.in);
 
         int press = 111;
 
@@ -22,7 +32,7 @@ public class calculator {
             System.out.println("press - 9 - TEMPERATURE");
             System.out.println("press - 0 - EXIT");
 
-            press = (int)in.nextInt();
+            press = Scan.choose();
 
             switch(press)
             {   case 0:
@@ -60,7 +70,6 @@ public class calculator {
                     break;
             }
 
-             in.close();
             
         }
         
@@ -76,7 +85,6 @@ class simple
 
     static void calculation()
     {  
-        Scanner in = new Scanner(System.in);
             
             
             
@@ -90,7 +98,7 @@ class simple
             System.out.println("press - 6 - Percentage");
             System.out.println("press - 0 - Exit");
 
-            int press = (int)in.nextInt();
+            int press = Scan.choose();
             
 
             switch(press)
@@ -119,7 +127,7 @@ class simple
                     System.out.println("Invalid Entery. try again");
                     break;
             }
-            in.close();
+             
         }
     }
 
@@ -128,42 +136,41 @@ class simple
 class Addition
 {
     static void add()
-    {   Scanner in = new Scanner(System.in);
-
+    {
         
         System.out.print("\n<How name numbers do want to add? : >");
-        int num = (int)in.nextInt();
+        int num = Scan.choose();
         long total = 0l;
 
         long arr[] = new long[num];
         for(int i =0; i < num; i++)
         {   System.out.print("Enter value : ");
-            arr[i] = in.nextLong();
+            arr[i] = Scan.choose();
             total += arr[i];
         }
 
         System.out.println("\nFinal Sum = " + total + "\n");
          
-        in.close();
+        
     }
 }
 
 class Subtraction
 {
     static void subtract()
-    {   Scanner in = new Scanner(System.in);
+    {    
 
         
         System.out.print("\n<Let me know the numbers : >\n");
-        long num1 = (long)in.nextLong();
-        long num2 = (long)in.nextLong();
+        long num1 =  Scan.choose();
+        long num2 =  Scan.choose();
         long total = num1 - num2;
 
         
 
         System.out.println("\nFinal Answer = " + total + "\n");
 
-        in.close();
+         
     }
 }
 
@@ -172,20 +179,20 @@ class Division
 {
     static void divide()
     {
-        Scanner in = new Scanner(System.in);
+         
 
         System.out.println("\n<Let me know divisor and divident>\n");
         
         System.out.print("Divident : ");
-        int divident = (int)in.nextInt();
+        int divident =  Scan.choose();
         System.out.print("Divisor : ");
-        int divisor = (int)in.nextInt();
+        int divisor =  Scan.choose();
 
         int quatioent = divident / divisor;
         int remainder = divident % divisor;
         System.out.print("\nYour Quatioent  : " + quatioent);
         System.out.println("\nAnd Remainder   : " + remainder);
-        in.close();
+         
     }
 }
 
@@ -193,14 +200,14 @@ class Multiplication
 {
     static void multiply()
     {   
-        Scanner in = new Scanner(System.in);
+         
         System.out.println("Enter the Values : ");
-        int num1 = (int)in.nextInt();
-        int num2 = (int)in.nextInt();
+        int num1 = Scan.choose();
+        int num2 = Scan.choose();
         int product = num1 * num2;
 
         System.out.println("\nProduct : " + product);
-        in.close();
+         
     }
 }
 
@@ -208,12 +215,12 @@ class Square
 {
     static void square()
     {
-        Scanner in = new Scanner(System.in);
+         
         System.out.print("\nEnter Youe Number : ");
-        int num = (int)in.nextInt();
+        int num = Scan.choose();
         long sqr = num * num;
         System.out.println("\n Square : " + sqr);
-        in.close();
+         
     }
 }
 
@@ -221,11 +228,11 @@ class Percentage
 {
     static void percent()
     {
-        Scanner in = new Scanner(System.in);
+         
         System.out.print("\nEnter the Number : ");
-        float num =(float) in.nextInt();
+        float num =(float) Scan.choose();
         float perce = num / 100;
-        in.close();
+         
 
         System.out.printf("\n1 Percent of %.0f : %f \n", num, perce);
     }
@@ -242,9 +249,9 @@ class Area
         System.out.println("press - 5 - triangle");
         System.out.println("press - 6 - trapezium");
 
-        Scanner in = new Scanner(System.in);
+         
 
-        int press = (int)in.nextInt();
+        int press = Scan.choose();
 
         switch(press)
         {
@@ -258,7 +265,7 @@ class Area
                 System.out.println("Invalid entery, try again");
         }
 
-        in.close();
+         
     }
 
     
@@ -272,14 +279,14 @@ class Circle
     {
         System.out.print("\nLet me know Radius of the circle : ");
 
-        Scanner in = new Scanner(System.in);
-        float radius = (float)in.nextFloat();
+         
+        float radius = (float)Scan.choose();
 
         double area = ( 3.14 * radius );
 
         System.out.println("\nArea of circle with " + radius + " unit radius : " + area + " unit square\n");
 
-        in.close();
+         
     }
 }
 
